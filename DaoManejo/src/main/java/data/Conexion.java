@@ -6,7 +6,7 @@ public class Conexion {
     //generate the credential constants for the db
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/pruebajdbc?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "hola123";
+    private static final String JDBC_PASSWORD = "root";
     
     //We generate the connection methods by means of the previous parameters
     
