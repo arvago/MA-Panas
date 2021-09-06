@@ -1,0 +1,4 @@
+Datos\Conexion.class
+Datos\UsuarioDAO.class
+test\TestManejoDAOUsuario.class
+domain\Usuario.class
