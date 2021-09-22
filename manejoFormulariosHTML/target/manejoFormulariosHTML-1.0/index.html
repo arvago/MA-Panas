@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manejo de formularios JEE</title>
+        <meta charset="UTF-8">
+        <!-- <link rel="stylesheet" href="recursos/estilos.css"/>         -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" >
+            $(document).ready(function () {
+                $('.select').formSelect();
+            });
+
+            $(document).ready(function () {
+                $('input#input_text, textarea#textarea2').characterCounter();
+            });
+
+        </script> 
+        <script type="text/javascript" src="recursos/funciones.js"></script>  
+    </head>
+    <body>
+        <div class="container ">
+            <h2>Data register</h2>
+            <div class="row card-panel grey lighten-5" style="height: 1200px">
+                <form class="col s12 grey lighten-5" id="idform" action="/manejoFormulariosHTML/Servlet" method="post" onsubmit="return validarForma(this)">
+                    <div class="row">    
+                        <div class="input-field col s8 ">
+                            <input id="last_name" type="text" class="validate"  name="usuario" onfocus="this.select()">
+                            <label for="last_name">User</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s8">
+                            <input id="password" type="password" class="validate" name="password" onfocus="this.select()">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h5>Technologies Types</h5>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="tecnologia" value="Java"  />
+                                <span>Java</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="tecnologia" value=".NET" />
+                                <span>Dot NET</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="tecnologia" value="PHP" />
+                                <span>PHP</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" name="tecnologia" value="Javascript" />
+                                <span>Javascript</span>
+                            </label>
+                        </p><p>
+                            <label>
+                                <input type="checkbox" name="tecnologia" value="Python" />
+                                <span>Python</span>
+                            </label>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h5>Gender</h5>
+                        <p>
+                            <label>
+                                <input name="genero" type="radio" value="Male"/>
+                                <span>Male</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="genero"type="radio" value="Female"/>
+                                <span>Female</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="genero" type="radio" value="Mixed"/>
+                                <span>Half & Half</span>
+                            </label>
+                        </p>
+                    </div>
+
+                    <div class="row">
+                        <h5>Job</h5>
+                        <div class="input-field col s6">
+                            <select name="ocupacion" class="select">
+                                <option value="" disabled selected>Choose your option</option>
+                                <option value="Professor">Professor</option>
+                                <option default value="Engineer">Engineer</option>
+                                <option value="Retired">Retired</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h5>Favorite Music <small>(Optional)</small>  </h5>
+                        <div class="input-field col s6">
+                            <select name="musica" multiple class="select" >
+                                <option value="" disabled>Choose your option</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Salsa">Salsa</option>
+                                <option value="Dubstep">Dubstep</option>
+                                <option value="Hip-hop">Hip-hop</option>
+                                <option  value="Jazz">Jazz</option>
+                                <option selected value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h5>Comments <small>(Optional)</small>  </h5>
+                        <div class="input-field col s6">
+                            <textarea id="textarea2" class="materialize-textarea" name="comentarios" data-length="120"  onfocus="this.select()"></textarea>
+                            <label for="textarea2">Textarea</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn waves-effect waves-light btn-large blue accent-4" type="submit" name="action" style="margin-right: 4rem" value="Enviar">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                        <a  class="waves-effect waves-light btn-large blue accent-1" id="btnClean"><i class="material-icons right" ></i>Clean</a>
+                    </div>
+                </form>
+            </div>
+    </body>
+   
+</html>
