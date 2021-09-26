@@ -1,0 +1,73 @@
+/*GLOBALES*/
+html{
+  box-sizing: border-box;
+  font-size: 62.5%; 
+}
+*, *::before, *:after{
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem; 
+  line-height: 2; 
+  width: 100%;  
+  background-color: peachpuff;
+}
+a {
+  color: #00B7FF;
+}
+h1{
+  text-align: center;
+  font-weight: 720;
+  font-size: 3.4rem;
+  margin-bottom: 0;
+  padding: 0;
+}
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 120rem;
+  margin: 0 auto 0 auto;
+  width: 100%;
+}
+.contenedor-general{
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+/*FORM*/
+.contenedor-form{
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;  
+  justify-content: space-between;
+  width: 100%;  
+  max-width: 120rem;
+  border-radius: .5rem;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+label{
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  flex-basis: 50%;  
+}
+.boton{
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 1rem 3rem;
+  background-color: rgb(160, 22, 12);
+  margin-top: 1rem;
+  text-align: center;
+  width: 30%;
+  border: none;
+  border-radius:.5rem;
+}
