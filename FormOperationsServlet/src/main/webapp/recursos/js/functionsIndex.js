@@ -8,7 +8,7 @@ function validateOperation(form){
         }        
     }
     if(!radioSeleccionado){
-        alert('Error, selecciona una operddwdwdwdacion');
+        alert('Error, selecciona una operacion');
         hasError = true;
     }
     
