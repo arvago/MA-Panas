@@ -3,6 +3,7 @@ window.onload = function(){
 };
 
 function calculateNP() {
+    txtRes.innerHTML = "";
     var cantidad = document.getElementById('txtCantidad').value;
     var txtRes = document.getElementById('txtRes');
     var bandera = true, m, s = 2;
