@@ -2,8 +2,7 @@ window.onload = function(){
     document.getElementById("btnCalculate").onclick = calculateNP;
 };
 
-function calculateNP() {
-    txtRes.innerHTML = "";
+function calculateNP() {    
     var cantidad = document.getElementById('txtCantidad').value;
     var txtRes = document.getElementById('txtRes');
     var bandera = true, m, s = 2;
@@ -26,7 +25,7 @@ function calculateNP() {
             s++;
         }
     }
-    
+    txtRes.innerHTML = "";
 }
 
 
