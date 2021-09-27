@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
-@WebServlet("/Servlet")
+@WebServlet("/Operacion")
 
 public class Servlet extends HttpServlet{
     //Llamada a través del navegador
@@ -119,7 +119,7 @@ public class Servlet extends HttpServlet{
                 out.print("<input type='number' id='txtC'>");
                 out.print("</div>");
                 out.print("</div>");
-                out.print("<label id='txtX2'>TRIÁNGULO: </label>");
+                out.print("<label id='txtRes'>TRIÁNGULO: </label>");
                 out.print("<button class='boton' id='btnCalculate'>CALCULAR</button>");
                 out.print("</div>");
                 out.print("</body>");
