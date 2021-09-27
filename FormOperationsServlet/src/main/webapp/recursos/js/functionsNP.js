@@ -25,7 +25,6 @@ function calculateNP() {
             s++;
         }
     }
-    txtRes.innerHTML = "";
 }
 
 
