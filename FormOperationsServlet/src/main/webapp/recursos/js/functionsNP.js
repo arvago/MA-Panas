@@ -6,7 +6,7 @@ function calculateNP() {
     var cantidad = document.getElementById('txtCantidad').value;
     var txtRes = document.getElementById('txtRes');
     var bandera = true, m, s = 2;
-    
+    txtRes.innerHTML = "";
     for(var i=1; i<=cantidad; i++){
         bandera = false;
         while(!bandera){
@@ -25,6 +25,7 @@ function calculateNP() {
             s++;
         }
     }
+    
 }
 
 
