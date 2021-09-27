@@ -16,6 +16,3 @@ function calculateFG() {
         txtRes.innerHTML = "TRIÁNGULO: Escaleno";
     }  
 };
-
-
-
