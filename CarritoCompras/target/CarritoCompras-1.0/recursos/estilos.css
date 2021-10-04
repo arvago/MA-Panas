@@ -1,0 +1,39 @@
+html{
+    background-color: #eaeaea;
+}
+.default{
+    background-color: coral;
+    border: 0;
+    height: 30px;
+    margin: auto;
+    display: block;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.titulo{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+form{
+     
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, tr {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr{
+  background-color: #dddddd;
+}
