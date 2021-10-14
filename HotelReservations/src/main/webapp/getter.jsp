@@ -11,14 +11,27 @@
             <div class="container">
                 <h1>***BIENVENIDO AL HOTEL PANAS***</h1>
                 <h1>Habitaciones Reservadas</h1>
+                <jsp:useBean id="h1" class="beans.Habitacion" scope="session" />
+                <jsp:useBean id="h2" class="beans.Habitacion" scope="session" />
+                <jsp:useBean id="h3" class="beans.Habitacion" scope="session" />
+                <jsp:useBean id="h4" class="beans.Habitacion" scope="session" />
+                <input type="hidden" name="h1" value="sese" />
+                <jsp:getProperty name="h2" property="booked"/>
+                <jsp:getProperty name="h3" property="booked"/>              
+                <jsp:getProperty name="h4" property="booked"/>
                 <br>
                 <br>
             </div>            
             <table class="table">
-                <tr class="table-success">
-                   <td class="table-success">Habitacion 1</td> 
+                <tr>         
+                    <% String text = getComponentByName("h1").getValueAsDatatype.toString();
+}%>
+                    
+                    <td class="table-success">                        
+                        Habitacion 1 
+                    </td> 
                 </tr>
-                <tr class="table-danger">
+                <tr >
                     <td class="table-danger">Habitacion 2</td> 
                 </tr>
             </table>

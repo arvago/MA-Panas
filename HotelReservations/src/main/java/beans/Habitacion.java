@@ -2,7 +2,7 @@ package beans;
 
 public class Habitacion {
     private String name;
-    private Boolean isBooked;
+    private Boolean booked;
     
     public String getName(){
         return this.name;
@@ -13,10 +13,10 @@ public class Habitacion {
     }
     
     public Boolean getBooked(){
-        return this.isBooked;
+        return this.booked;
     }
     
     public void setBooked(Boolean isBooked){
-        this.isBooked = isBooked;
+        this.booked = isBooked;
     }
 }
