@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+    <head>        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <title>RESERVADAS</title>
@@ -20,8 +18,6 @@
                 <jsp:useBean id="h5" class="beans.Habitacion" scope="session" />
                 <jsp:useBean id="h6" class="beans.Habitacion" scope="session" />
 
-
-
                 <%
                         int habitacion = 0;
                         //Se obtiene el valor del form en setter.jsp con atributo name="habitacion"
@@ -31,8 +27,7 @@
                             habitacion =  Integer.valueOf(request.getParameter("habitacion"));
                         } catch (NumberFormatException ex) {
                             habitacion=20;
-                        }
-                    
+                        }                    
 
                  //El valor del select es true, dado que fue enviado por el form y asignado a h1, h2 etc y con la clase en los beans
                  switch (habitacion) {
@@ -82,7 +77,6 @@
                         break;
                 }
                 %>
-
                 
                 <%
                     //El valor de classbackground asignara el color a la celda de la tabla segun esté disponible o no la habitacon, aplicando las clases  de bootstrap
@@ -93,7 +87,6 @@
                     else {
                      classBackground1 = "table-danger";
                     }
-
                     
                     String classBackground2  = "";
                     if (h2.getBooked() == true) {
@@ -102,7 +95,6 @@
                     else {
                      classBackground2 = "table-danger";
                     }
-
                     
                     String classBackground3  = "";
                     if (h3.getBooked() == true) {
@@ -111,7 +103,6 @@
                     else {
                      classBackground3 = "table-danger";
                     }
-
                     
                     String classBackground4  = "";
                     if (h4.getBooked() == true) {
@@ -120,7 +111,6 @@
                     else {
                      classBackground4 = "table-danger";
                     }
-
                     
                     String classBackground5  = "";
                     if (h5.getBooked() == true) {
@@ -138,34 +128,40 @@
                      classBackground6 = "table-danger";
                     }
                 %>
+                
+                <div class="form-check">
+                    <input class="form-check-input" style="background-color:#C6F5CC" type="checkbox" value="" id="flexCheckDefault" disabled="disabled">
+                    <label>Disponibles</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" style="background-color:#FA9D90" type="checkbox" value="" id="flexCheckDefault" disabled="disabled">
+                    <label>Reservadas</label>
+                </div>
+                <br>
 
                 <%--Aqui se asignan las clases a la tabla con respecto a al valor de getBooked--%>
-                <table id="habitacion" style="width: 100%" class="table">
-            <tr>
-                <td class="<%=classBackground1%>">Habitacion 1-<jsp:getProperty name="h1" property="id"/></td>
-                <td class="<%=classBackground2%>">Habitacion 2-<jsp:getProperty name="h2" property="id"/></td>
-            </tr>
-            <tr>
-                <td class="<%=classBackground3%>">Habitacion 3-<jsp:getProperty name="h3" property="id"/></td>
-                <td class="<%=classBackground4%>">Habitacion 4-<jsp:getProperty name="h4" property="id"/></td>
-            </tr>
-            <tr>
-                <td class="<%=classBackground5%>">Habitacion 5-<jsp:getProperty name="h5" property="id"/></td>
-                <td class="<%=classBackground6%>">Habitacion 6-<jsp:getProperty name="h6" property="id"/></td>
-            </tr>
-                </table>
-            
-            
+            <table id="habitacion" style="width: 100%" class="table">
+                <tr>
+                    <td class="<%=classBackground1%>">Habitación 1</td>
+                    <td class="<%=classBackground2%>">Habitación 2</td>
+                </tr>
+                <tr>
+                    <td class="<%=classBackground3%>">Habitación 3</td>
+                    <td class="<%=classBackground4%>">Habitación 4</td>
+                </tr>
+                <tr>
+                    <td class="<%=classBackground5%>">Habitación 5</td>
+                    <td class="<%=classBackground6%>">Habitación 6</td>
+                </tr>
+            </table>          
+            <br>
+            <br>
+            <br>
+            <br>
+                <a type="button" class="btn btn-primary" href="setter.jsp"><i class="fas fa-bed"></i> Reservar otra habitacion</a>
                 <br>
-                <br>
-                <br>
-                <br>
-                <td>
-                    <a type="button" class="btn btn-primary" href="setter.jsp"><i class="fas fa-bed"></i> Reservar otra habitacion</a>
-                    <br>
-                    <a type="button" class="btn btn-primary" href="index.jsp"><i class="fa fa-home"></i> Inicio</a>
-                </td>
-             </div>
+                <a type="button" class="btn btn-primary" href="index.jsp"><i class="fa fa-home"></i> Inicio</a>
+         </div>
         </div>
     </body>
 </html>
