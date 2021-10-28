@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="index.jsp" class="btn btn-ligth btn-block">
+                <a href="index2.jsp" class="btn btn-ligth btn-block">
                     <i class="fas fa-arrow-left"></i> Regresar al inicio
                 </a>
             </div>
@@ -15,6 +15,7 @@
                 <a href="${pageContext.request.contextPath}/ServletControlador?accion=eliminar&idCompra=${compra.idCompra}"
                    class="btn btn-danger btn-block">
                     <i class="fas fa-trash"></i> Eliminar Compra
+                    </a>
             </div>
         </div>
     </div>

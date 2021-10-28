@@ -26,7 +26,7 @@
                                 <tr>
                                     <td>${status.count}</td>
                                     <td>${compra.idCliente}</td>
-                                    <td>${compra.Producto}</td>
+                                    <td>${compra.producto}</td>
                                     
                                     <%--Agregamos conversión de numero a moneda--%>
                                     <td> <fmt:formatNumber value="${compra.saldo}" type="currency"/> </td>

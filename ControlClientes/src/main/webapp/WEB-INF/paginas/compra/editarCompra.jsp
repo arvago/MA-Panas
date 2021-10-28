@@ -18,7 +18,7 @@
               method="POST" class="was-validated">
 
             <!--Botones de Navegacion -->
-            <jsp:include page="/WEB-INF/paginas/comunes/botonesNavegacionEdicion.jsp"/>
+            <jsp:include page="/WEB-INF/paginas/comunes/botonesNavegacionEdicionCompra.jsp"/>
 
             <section id="details">
                 <div class="container">
@@ -30,11 +30,11 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="producto">Producto</label>
+                                        <label for="producto">Nombre de Producto</label>
                                         <input type="text" class="form-control" name="producto" required value="${compra.producto}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="cliente">Cliente</label>
+                                        <label for="cliente">ID Cliente</label>
                                         <input type="number" class="form-control" name="cliente" required value="${compra.idCliente}">
                                     </div>
                                     <div class="form-group">

@@ -21,10 +21,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="clientes.jsp">Clientes</a>
+                            <a class="nav-link " aria-current="page" href="index.jsp">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="">Compras</a>
+                            <a class="nav-link active" aria-current="page" href="index2.jsp">Compras</a>
                         </li>
                     </ul>
                 </div>
