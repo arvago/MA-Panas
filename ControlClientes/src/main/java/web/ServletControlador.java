@@ -14,7 +14,7 @@ public class ServletControlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
 // Listado de clientes sencillo
 //        List<Cliente> clientes = new ClienteDaoJDBC().listar();
 //        System.out.println("clientes = "+clientes);
@@ -60,38 +60,28 @@ public class ServletControlador extends HttpServlet {
         }
         return saldoTotal;
     }
-    
-    private String clienteMas(List<Cliente> clientes){
-        double mayor, menor;
+
+ private String clienteMas(List<Cliente> clientes){
+        double mayor = Double.MIN_VALUE;
         String cMayor = "";
-	mayor = menor = clientes.get(0).getSaldo();
-        
-	for (int i = 1; i < clientes.size(); ++i)
-	{
-		if (clientes.get(i).getSaldo() > mayor){
-                    mayor = clientes.get(i).getSaldo();
-                    cMayor = clientes.get(i).getNombre() + " " + clientes.get(i).getApellido();
-                }
-		if (clientes.get(i).getSaldo() < menor) menor = clientes.get(i).getSaldo();
-	}
+        for(Cliente i : clientes){
+            if(i.getSaldo() > mayor ){
+                mayor = i.getSaldo();
+                cMayor = i.getNombre() + " " + i.getApellido();
+            }
+        }
         return cMayor;
     }
-        
+
     private String clienteMenos(List<Cliente> clientes){
-        double mayor, menor;
+        double menor = Double.MAX_VALUE;
         String cMenor = "";
-	mayor = menor = clientes.get(0).getSaldo();
-        
-	for (int i = 1; i < clientes.size(); ++i)
-	{
-		if (clientes.get(i).getSaldo() > mayor){
-                    mayor = clientes.get(i).getSaldo();
-                }
-		if (clientes.get(i).getSaldo() < menor){
-                    menor = clientes.get(i).getSaldo();
-                    cMenor = clientes.get(i).getNombre() + " " + clientes.get(i).getApellido();
-                }
-	}
+        for(Cliente i : clientes){
+            if(i.getSaldo() < menor ){
+                menor = i.getSaldo();
+                cMenor = i.getNombre() + " " + i.getApellido();
+            }
+        }
         return cMenor;
     }
 
@@ -174,12 +164,11 @@ public class ServletControlador extends HttpServlet {
         //Redirigimos hacia accion por default
         this.accionDefault(request, response);
     }
-    
-        private void eliminarCliente(HttpServletRequest request, HttpServletResponse response)
+
+    private void eliminarCliente(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //recuperamos los valores del formulario editarCliente
         int idCliente = Integer.parseInt(request.getParameter("idCliente"));
-     
 
         //Creamos el objeto de cliente (modelo)
         Cliente cliente = new Cliente(idCliente);
