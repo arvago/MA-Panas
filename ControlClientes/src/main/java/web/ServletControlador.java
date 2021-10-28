@@ -47,6 +47,8 @@ public class ServletControlador extends HttpServlet {
         sesion.setAttribute("clientes", clientes);
         sesion.setAttribute("totalClientes", clientes.size());
         sesion.setAttribute("saldoTotal", this.calcularSaldoTotal(clientes));
+        sesion.setAttribute("clienteMas", this.clienteMas(clientes));
+        sesion.setAttribute("clienteMenos", this.clienteMenos(clientes));
         request.getRequestDispatcher("clientes.jsp").forward(request, response);
         response.sendRedirect("clientes.jsp");
     }
@@ -57,6 +59,40 @@ public class ServletControlador extends HttpServlet {
             saldoTotal += cliente.getSaldo();
         }
         return saldoTotal;
+    }
+    
+    private String clienteMas(List<Cliente> clientes){
+        double mayor, menor;
+        String cMayor = "";
+	mayor = menor = clientes.get(0).getSaldo();
+        
+	for (int i = 1; i < clientes.size(); ++i)
+	{
+		if (clientes.get(i).getSaldo() > mayor){
+                    mayor = clientes.get(i).getSaldo();
+                    cMayor = clientes.get(i).getNombre() + " " + clientes.get(i).getApellido();
+                }
+		if (clientes.get(i).getSaldo() < menor) menor = clientes.get(i).getSaldo();
+	}
+        return cMayor;
+    }
+        
+    private String clienteMenos(List<Cliente> clientes){
+        double mayor, menor;
+        String cMenor = "";
+	mayor = menor = clientes.get(0).getSaldo();
+        
+	for (int i = 1; i < clientes.size(); ++i)
+	{
+		if (clientes.get(i).getSaldo() > mayor){
+                    mayor = clientes.get(i).getSaldo();
+                }
+		if (clientes.get(i).getSaldo() < menor){
+                    menor = clientes.get(i).getSaldo();
+                    cMenor = clientes.get(i).getNombre() + " " + clientes.get(i).getApellido();
+                }
+	}
+        return cMenor;
     }
 
     private void editarCliente(HttpServletRequest request, HttpServletResponse response)
