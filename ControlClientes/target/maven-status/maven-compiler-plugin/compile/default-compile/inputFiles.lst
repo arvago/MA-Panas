@@ -1,5 +1,7 @@
-A:\Fichiers\ISSC\S-V\Modelos Abstractos\2P\ControlClientes\src\main\java\web\ServletControlador.java
-A:\Fichiers\ISSC\S-V\Modelos Abstractos\2P\ControlClientes\src\main\java\datos\Conexion.java
-A:\Fichiers\ISSC\S-V\Modelos Abstractos\2P\ControlClientes\src\main\java\dominio\Cliente.java
-A:\Fichiers\ISSC\S-V\Modelos Abstractos\2P\ControlClientes\src\main\java\datos\ClienteDaoJDBC.java
-A:\Fichiers\ISSC\S-V\Modelos Abstractos\2P\ControlClientes\src\main\java\dominio\Compra.java
+D:\Desktop\DE LA SALLE\5TO. SEMESTRE\MODELOS ABSTRACTOS\REPOSITORIO\ControlClientes\src\main\java\web\ServletControladorCompras.java
+D:\Desktop\DE LA SALLE\5TO. SEMESTRE\MODELOS ABSTRACTOS\REPOSITORIO\ControlClientes\src\main\java\datos\Conexion.java
+D:\Desktop\DE LA SALLE\5TO. SEMESTRE\MODELOS ABSTRACTOS\REPOSITORIO\ControlClientes\src\main\java\dominio\Cliente.java
+D:\Desktop\DE LA SALLE\5TO. SEMESTRE\MODELOS ABSTRACTOS\REPOSITORIO\ControlClientes\src\main\java\datos\ClienteDaoJDBC.java
+D:\Desktop\DE LA SALLE\5TO. SEMESTRE\MODELOS ABSTRACTOS\REPOSITORIO\ControlClientes\src\main\java\web\ServletControlador.java
+D:\Desktop\DE LA SALLE\5TO. SEMESTRE\MODELOS ABSTRACTOS\REPOSITORIO\ControlClientes\src\main\java\datos\CompraDaoJDBC.java
+D:\Desktop\DE LA SALLE\5TO. SEMESTRE\MODELOS ABSTRACTOS\REPOSITORIO\ControlClientes\src\main\java\dominio\Compra.java

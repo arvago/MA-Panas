@@ -31,7 +31,7 @@
                                     <%--Agregamos conversión de numero a moneda--%>
                                     <td> <fmt:formatNumber value="${compra.saldo}" type="currency"/> </td>
                                     <td>
-                                        <a href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idCliente=${compra.idCompra}"
+                                        <a href="${pageContext.request.contextPath}/ServletControladorCompras?accion=editar&idCompra=${compra.idCompra}"
                                            class="btn btn-secondary">
                                             <i class="fas fa-angle-double-right"></i> Editar
                                         </a>

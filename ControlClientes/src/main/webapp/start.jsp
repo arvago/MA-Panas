@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="card ">
-                            <a class="card-body btn btn-primary" href="index.jsp">
+                            <a class="card-body btn btn-primary" href="clientes.jsp">
                                 <h3 class="card-title">Clientes
                                     <br>
                                     <br>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="card  bg-primary">
-                            <a class="card-body btn btn-primary" href="index.jsp">
+                            <a class="card-body btn btn-primary" href="compras.jsp">
                                 <h3 class="card-title">Compras
                                     <br>
                                     <br>

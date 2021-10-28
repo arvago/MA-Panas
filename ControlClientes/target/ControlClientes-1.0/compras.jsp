@@ -15,11 +15,21 @@
         <title>Control de Compras</title>
     </head>
     <body>
-        <!-- Prueba de listado clientes -->
-        <h1>Control de Compras</h1>
-        <c:forEach var="compra" items="${compras}">
-        <li>${compra.idCompra} ${compra.idCliente} ${compra.producto} ${compra.saldo}</li>            
-        </c:forEach>  
+        <!--Cabecero-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="clientes.jsp">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="">Compras</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     <!--Cabecero-->
     <jsp:include page="/WEB-INF/paginas/comunes/cabeceroCompras.jsp"/>
 
@@ -27,7 +37,7 @@
     <jsp:include page="/WEB-INF/paginas/comunes/botonesNavegacionCompra.jsp"/>
 
     <!--Listado Clientes -->
-    <jsp:include page="/WEB-INF/paginas/cliente/listadoCompras.jsp"/>
+    <jsp:include page="/WEB-INF/paginas/compra/listadoCompras.jsp"/>
 
     <!--Pie de Pagina-->
     <jsp:include page="/WEB-INF/paginas/comunes/piePagina.jsp"/>

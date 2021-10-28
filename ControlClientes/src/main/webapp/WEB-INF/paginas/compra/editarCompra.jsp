@@ -14,7 +14,7 @@
         <!--Cabecero-->
         <jsp:include page="/WEB-INF/paginas/comunes/cabecero.jsp"/>
 
-        <form action="${pageContext.request.contextPath}/ServletControlador?accion=modificar&idCompra=${compra.idCompra}"
+        <form action="${pageContext.request.contextPath}/ServletControladorCompras?accion=modificar&idCompra=${compra.idCompra}"
               method="POST" class="was-validated">
 
             <!--Botones de Navegacion -->
