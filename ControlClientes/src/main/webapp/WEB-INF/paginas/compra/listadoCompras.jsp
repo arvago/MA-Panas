@@ -47,5 +47,5 @@
 </section>
 
 <!-- Agregar cliente MODAL -->
-<jsp:include page="/WEB-INF/paginas/cliente/agregarCompra.jsp"/>
+<jsp:include page="/WEB-INF/paginas/compra/agregarCompra.jsp"/>
                         
