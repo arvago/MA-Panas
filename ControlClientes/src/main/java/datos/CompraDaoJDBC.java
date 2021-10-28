@@ -110,7 +110,7 @@ public class CompraDaoJDBC {
             stmt.setInt(1, compra.getIdCliente());
             stmt.setDouble(2, compra.getSaldo());
             stmt.setString(3, compra.getProducto());
-            stmt.setInt(6, compra.getIdCompra());
+            stmt.setInt(4, compra.getIdCompra());
 
             rows = stmt.executeUpdate();
         } catch (SQLException ex) {
