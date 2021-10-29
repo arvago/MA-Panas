@@ -14,7 +14,7 @@ public class ServletControladorCompras extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+     
         String accion = request.getParameter("accion");
         if (accion != null) {
             switch (accion) {
@@ -23,6 +23,9 @@ public class ServletControladorCompras extends HttpServlet {
                     break;
                 case "eliminar":
                     this.eliminarCompra(request, response);
+                    break;
+                case "obtenerPorCliente":
+                    this.listarPorCliente(request, response);
                     break;
                 default:
                     this.accionDefault(request, response);
@@ -51,6 +54,19 @@ public class ServletControladorCompras extends HttpServlet {
         String jspEditar = "/WEB-INF/paginas/compra/editarCompra.jsp";
         // se crea ruta para navegar y que despecha el servlet
         request.getRequestDispatcher(jspEditar).forward(request, response);
+    }
+    
+    
+    private void listarPorCliente(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        //recuperamos el idCompra
+        String idClienteString = request.getParameter("idCliente");
+        int idCliente = Integer.parseInt(idClienteString);
+        List<Compra> compras = new CompraDaoJDBC().encontrarPorId(new Compra(idCliente));
+        request.setAttribute("compras", compras);
+        //String jspEditar = "/WEB-INF/paginas/compra/editarCompra.jsp";
+        // se crea ruta para navegar y que despecha el servlet
+        request.getRequestDispatcher("compras.jsp").forward(request, response);
     }
 
     @Override
@@ -120,6 +136,8 @@ public class ServletControladorCompras extends HttpServlet {
         //Redirigimos hacia accion por default
         this.accionDefault(request, response);
     }
+    
+    
     
         private void eliminarCompra(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

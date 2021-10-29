@@ -32,6 +32,7 @@ public class Cliente {
         this.telefono = telefono;
         this.saldo = saldo;
     }
+    
 
     public int getIdCliente() {
         return idCliente;

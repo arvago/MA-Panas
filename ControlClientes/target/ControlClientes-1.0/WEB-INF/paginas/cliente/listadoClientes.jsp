@@ -55,26 +55,26 @@
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
                         <h3>Total Clientes</h3>
-                        <h4 class="display-4">
+                        <h5 class="display-4">
                             <i class="fas fa-users"></i> ${totalClientes}
-                        </h4>
+                        </h5>
                     </div>
                 </div>   
                         
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
                         <h3>Cliente que debe más</h3>
-                        <h4 class="display-4">
+                        <h5 class="display-4">
                             <i class="fas fa-users"></i> ${clienteMas}
-                        </h4>
+                        </h5>
                     </div>
                 </div>    
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
                         <h3>Cliente que debe menos</h3>
-                        <h4 class="display-4">
+                        <h5 class="display-4">
                             <i class="fas fa-users"></i> ${clienteMenos}
-                        </h4>
+                        </h5>
                     </div>
                 </div> 
             </div>

@@ -20,6 +20,9 @@ public class CompraDaoJDBC {
             + " SET id_cliente=?, precio=?, producto=? WHERE id_compras=?";
 
     private static final String SQL_DELETE = "DELETE FROM compras WHERE id_compras = ?";
+    
+    private static final String SQL_SELECT_COMPRA_BY_CLIENTE = "SELECT id_compras, id_cliente, precio, producto "
+            + " FROM compras WHERE id_cliente= ?";
 
     public List<Compra> listar() {
         Connection conn = null;
@@ -49,6 +52,40 @@ public class CompraDaoJDBC {
         }
         return compras;
     }
+    
+    
+    public  List<Compra> encontrarPorId(Compra compra) {
+       Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        compra = null;
+        List<Compra> comprasById = new ArrayList<>();
+        try {
+            conn = Conexion.getConnection();
+            stmt.setInt(1, compra.getIdCliente());
+            stmt = conn.prepareStatement(SQL_SELECT_COMPRA_BY_CLIENTE);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                int idCompra = rs.getInt("idCompras");
+                int idCliente = rs.getInt("idCliente");
+                double precio = rs.getDouble("precio");
+                String producto = rs.getString("producto");
+
+                compra = new Compra(idCompra, idCliente, producto, precio);
+                comprasById.add(compra);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(stmt);
+            Conexion.close(conn);
+        }
+        System.out.println(comprasById);
+        return comprasById;
+    }
+    
+
 
     public Compra encontrar(Compra compra) {
         Connection conn = null;
