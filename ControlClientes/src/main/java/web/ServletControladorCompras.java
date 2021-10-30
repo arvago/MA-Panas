@@ -121,7 +121,7 @@ public class ServletControladorCompras extends HttpServlet {
         int idCliente = Integer.parseInt(idClienteString);
 
         double saldo = 0;
-        String precio = request.getParameter("precio");
+        String precio = request.getParameter("number");
         if (precio != null && !"".equals(precio)) {
             saldo = Double.parseDouble(precio);
         }
