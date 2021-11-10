@@ -2,32 +2,35 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
-                <h5 class="modal-title">Agregar Compra</h5> 
+                <h5 class="modal-title">Crear Usuario</h5> 
                 <button class="close" data-dismiss="modal">
                     <span>&times;</span>
                 </button>
             </div>
             
-            <form action="${pageContext.request.contextPath}/ServletControladorCompras?accion=insertar"
+            <form action="${pageContext.request.contextPath}/login?accion=insertar"
                   method="POST" class="was-validated">
                 
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="producto">Nombre de Producto</label>
-                        <input type="text" class="form-control" name="producto" required>
+                        <label for="name">Nombre:</label>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="cliente">ID Cliente</label>
-                        <input type="number" class="form-control" name="cliente" required>
+                        <label for="lastName">Apellido:</label>
+                        <input type="text" class="form-control" name="lastName" required>
                     </div>
                     <div class="form-group">
-                        <label for="total">Total</label>
-                        <input type="number" class="form-control" name="total" required>
+                        <label for="username">Usuario:</label>
+                        <input type="text" class="form-control" name="username" required>
                     </div>
-                    
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="text" class="form-control" name="password" required>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Realizar Compra</button>
+                    <button class="btn btn-primary" type="submit">Registrar Usuario</button>
                 </div>    
             </form>
         </div>

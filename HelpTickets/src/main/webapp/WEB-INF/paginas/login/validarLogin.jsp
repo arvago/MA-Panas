@@ -11,6 +11,6 @@
             <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
         </div>       
     </form>
-    <p class="text-center"><a href="#" data-toggle="modal" data-target="#agregarUserModal">Create an Account</a></p>
+    <p class="text-center"><a href="#" data-toggle="modal" data-target="#agregarUserModal">Crear Cuenta</a></p>
 </div>
 

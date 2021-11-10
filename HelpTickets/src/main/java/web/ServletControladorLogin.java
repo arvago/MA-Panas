@@ -49,6 +49,7 @@ public class ServletControladorLogin extends HttpServlet{
                     //this.insertarCompra(request, response);
                     break;
                 case "insertar":
+                    System.out.println("Si llega");
                     //this.modificarCompra(request, response);
                     break;
                 default:
