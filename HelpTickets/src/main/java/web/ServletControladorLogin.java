@@ -80,6 +80,7 @@ public class ServletControladorLogin extends HttpServlet{
         if(registrosModificados > 0){
             System.out.println("Usuario Registrado");
         } else {
+            System.out.println("Usuario No se registró");
         }
         
         //Redirigimos hacia accion por default
@@ -98,6 +99,7 @@ public class ServletControladorLogin extends HttpServlet{
         List<User> usuarios = new UserDaoJDBC().validar(user);
         if(usuarios.size() > 0){
             System.out.println("Usuario Encontrado");
+            System.out.println(usuarios);
         }else{
             System.out.println("Usuario No Encontrado");
         }
