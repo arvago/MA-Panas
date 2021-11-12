@@ -1,17 +1,3 @@
-<%-- 
-    Document   : myTickets
-    Created on : 9/11/2021, 05:41:19 PM
-    Author     : luis_
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
         <div class="row d-flex justify-content-center container">
             <div class="col-md-12">
                 <div class="card-hover-shadow-2x mb-3 card">
@@ -169,5 +155,3 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>

@@ -99,7 +99,8 @@ public class ServletControladorLogin extends HttpServlet{
         List<User> usuarios = new UserDaoJDBC().validar(user);
         if(usuarios.size() > 0){
             System.out.println("Usuario Encontrado");
-            System.out.println(usuarios);
+            request.getRequestDispatcher("index2.jsp").forward(request, response);
+            response.sendRedirect("index2.jsp");
         }else{
             System.out.println("Usuario No Encontrado");
         }
