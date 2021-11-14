@@ -103,8 +103,9 @@ public class ServletControladorLogin extends HttpServlet{
             response.sendRedirect("index2.jsp");
         }else{
             System.out.println("Usuario No Encontrado");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+            response.sendRedirect("index.jsp");
         }
-        //Redirigimos hacia accion por default
         
     }
 }
