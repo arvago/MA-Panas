@@ -1,4 +1,4 @@
-        <div class="row d-flex justify-content-center container">
+        <div class="row d-flex justify-content-center container ">
             <div class="col-md-12">
                 <div class="card-hover-shadow-2x mb-3 card">
                     <div class="card-header-tab card-header">

@@ -21,6 +21,10 @@
                 background-color: #6200EA;
                 color: white;
             }
+            .title-page{
+                background-color: #6270ff;
+                color: white;
+            }
             body {
                 margin: 0;
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -38,7 +42,7 @@
             }
 
             .container {
-                margin: auto;
+                margin: 50px auto;
                 display: block;
             }
 
@@ -200,23 +204,17 @@
                 background-color: #fff
             }
             .user-icon{
-                color: white !important;
-                font-size: 50px;
-                margin-left: 1000px;
-            }
-            .wd-100{
-                width: 100%
+                color: gainsboro !important;
             }
         </style>
     </head>
     <body>
         <jsp:include page="/WEB-INF/paginas/global/navbar.jsp"/>
         <!--Cabecero-->
-        <nav class="navbar navbar-expand-lg ">
+        <nav class="title-page navbar-expand-lg ">
             <div class="container-fluid">
-                <div class="collapse navbar-collapse wd-100" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <h1>Control de Tickets</h1>
-                    <a class="nav-link nav-area-ticket" aria-current="page" href="#"><i class="fa fa-user user-icon" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
