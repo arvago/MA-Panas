@@ -103,10 +103,12 @@ public class ServletControladorLogin extends HttpServlet{
             int id = usuarios.get(0).getIdUser();
             String name = usuarios.get(0).getName();
             String lastName = usuarios.get(0).getLastName();
+            String role = usuarios.get(0).getRole();
             sesion.setAttribute("idUserLogged", id);
             sesion.setAttribute("name", name);
             sesion.setAttribute("lastName", lastName);
             sesion.setAttribute("username", username);
+            sesion.setAttribute("role", role);
             request.getRequestDispatcher("index2.jsp").forward(request, response);
             response.sendRedirect("index2.jsp");
         }else{
