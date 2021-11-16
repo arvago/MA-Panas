@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * @author luis_
  */
 @WebServlet("/tickets")
-public class ServerletControladorTickets extends HttpServlet{
+public class ServletControladorTickets extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
