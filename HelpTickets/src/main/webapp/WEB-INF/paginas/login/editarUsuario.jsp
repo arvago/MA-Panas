@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
-                <h5 class="modal-title">Crear Usuario</h5> 
+                <h5 class="modal-title">Mi Perfil</h5> 
                 <button class="close" data-dismiss="modal">
                     <span>&times;</span>
                 </button>
@@ -16,7 +16,7 @@
                         <label for="name">Nombre:</label>
                         <input type="text" class="form-control" name="name" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"> 
                         <label for="lastName">Apellido:</label>
                         <input type="text" class="form-control" name="lastName" required>
                     </div>
@@ -24,13 +24,10 @@
                         <label for="username">Usuario:</label>
                         <input type="text" class="form-control" name="username" required>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña:</label>
-                        <input type="text" class="form-control" name="password" required>
-                    </div>
+                        <input type="hidden" class="form-control" name="id">
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Registrar Usuario</button>
+                    <button class="btn btn-primary" type="submit">Guardar Cambios</button>
                 </div>    
             </form>
         </div>

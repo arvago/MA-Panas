@@ -6,10 +6,10 @@
                     <a class="nav-link active nav-area nav-area-ticket user-icon" aria-current="page" href="#">Operativos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-area-ticket user-icon" aria-current="page" href="#">Administrativos</a>
+                    <a class="nav-link nav-area-ticket user-icon"  href="#">Administrativos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-area-ticket" aria-current="page" href="#"><i class="fa fa-user user-icon" aria-hidden="true"></i></a>
+                    <a class="nav-link nav-area-ticket" href="#" data-toggle="modal" data-target="#editarUserModal"><i class="fa fa-user user-icon" aria-hidden="true"></i></a>
                 </li>                
             </ul>
         </div>
