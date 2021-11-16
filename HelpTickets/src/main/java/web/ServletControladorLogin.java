@@ -90,6 +90,7 @@ public class ServletControladorLogin extends HttpServlet{
     private void validarUsuario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
+        HttpSession sesion = request.getSession();
         //recuperamos los valores del formulario validarLogin
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -99,6 +100,13 @@ public class ServletControladorLogin extends HttpServlet{
         List<User> usuarios = new UserDaoJDBC().validar(user);
         if(usuarios.size() > 0){
             System.out.println("Usuario Encontrado");
+            int id = usuarios.get(0).getIdUser();
+            String name = usuarios.get(0).getName();
+            String lastName = usuarios.get(0).getLastName();
+            sesion.setAttribute("idUserLogged", id);
+            sesion.setAttribute("name", name);
+            sesion.setAttribute("lastName", lastName);
+            sesion.setAttribute("username", username);
             request.getRequestDispatcher("index2.jsp").forward(request, response);
             response.sendRedirect("index2.jsp");
         }else{

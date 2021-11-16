@@ -14,17 +14,21 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="name">Nombre:</label>
-                        <input type="text" class="form-control" name="name" required>
+                        <input type="text" class="form-control" name="name" value="${name}" required>
                     </div>
                     <div class="form-group"> 
                         <label for="lastName">Apellido:</label>
-                        <input type="text" class="form-control" name="lastName" required>
+                        <input type="text" class="form-control" name="lastName" value="${lastName}" required>
                     </div>
                     <div class="form-group">
                         <label for="username">Usuario:</label>
-                        <input type="text" class="form-control" name="username" required>
+                        <input type="text" class="form-control" name="username" value="${username}" required>
                     </div>
-                        <input type="hidden" class="form-control" name="id">
+                    <div class="form-group">
+                        <label for="username">Contraseña:</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <input type="hidden" class="form-control" name="id" value="${idUserLogged}">
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" type="submit">Guardar Cambios</button>

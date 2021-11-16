@@ -51,5 +51,26 @@ public class ServerletControladorTickets extends HttpServlet{
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String accion = request.getParameter("accion");
+        if (accion != null) {
+            switch (accion) {                
+                case "editarUser":
+                    this.editarUser(request, response);
+                    break;
+                default:
+                    this.accionDefault(request, response);
+            }
+        } else {
+            this.accionDefault(request, response);
+        }
+    }
+    
+    private void editarUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    }
 
 }
