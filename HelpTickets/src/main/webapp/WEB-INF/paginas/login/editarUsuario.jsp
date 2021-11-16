@@ -8,7 +8,7 @@
                 </button>
             </div>
             
-            <form action="${pageContext.request.contextPath}/login?accion=insertar"
+            <form action="${pageContext.request.contextPath}/tickets?accion=editarUser"
                   method="POST" class="was-validated">
                 
                 <div class="modal-body">

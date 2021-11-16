@@ -3,6 +3,8 @@ package web;
 import java.io.IOException;
 import dominio.Ticket;
 import datos.TicketsDaoJDBC;
+import datos.UserDaoJDBC;
+import dominio.User;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -71,6 +73,25 @@ public class ServerletControladorTickets extends HttpServlet{
     
     private void editarUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    }
+        HttpSession sesion = request.getSession();
+        int idUser = Integer.parseInt(request.getParameter("id"));
+        String nombre = request.getParameter("name");
+        String apellido = request.getParameter("lastName");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        if(password.length() == 0){
+            password = null;
+        }
+        //Creamos el objeto de User (modelo)
+        User user = new User(idUser, nombre, apellido, username, password);
 
+        //Modificar el  objeto en la base de datos
+        int registrosModificados = new UserDaoJDBC().actualizar(user);
+        sesion.setAttribute("idUserLogged", idUser);
+        sesion.setAttribute("name", nombre);
+        sesion.setAttribute("lastName", apellido);
+        sesion.setAttribute("username", username);
+        this.accionDefault(request, response);
+    }
 }
