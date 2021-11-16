@@ -50,8 +50,8 @@ public class ServletControladorTickets extends HttpServlet{
 //        System.out.println("compras = " + compras);
 //        HttpSession sesion = request.getSession();
 //        sesion.setAttribute("compras", compras);
-        request.getRequestDispatcher("Tickets.jsp").forward(request, response);
-        response.sendRedirect("Tickets.jsp");
+        request.getRequestDispatcher("tickets.jsp").forward(request, response);
+        response.sendRedirect("tickets.jsp");
     }
     
     @Override
