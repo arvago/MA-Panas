@@ -92,6 +92,7 @@ public class ServletControladorTickets extends HttpServlet{
         sesion.setAttribute("name", nombre);
         sesion.setAttribute("lastName", apellido);
         sesion.setAttribute("username", username);
-        this.accionDefault(request, response);
+        request.getRequestDispatcher("index2.jsp").forward(request, response);
+        response.sendRedirect("index2.jsp");
     }
 }
