@@ -46,10 +46,11 @@ public class ServletControladorTickets extends HttpServlet{
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        List<Ticket> compras = new TicketsDaoJDBC().listar();
-//        System.out.println("compras = " + compras);
-//        HttpSession sesion = request.getSession();
-//        sesion.setAttribute("compras", compras);
+
+        List<Ticket> tickets = new TicketsDaoJDBC().listar();
+        System.out.println("tickets = " + tickets);
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("tickets", tickets);
         request.getRequestDispatcher("tickets.jsp").forward(request, response);
         response.sendRedirect("tickets.jsp");
     }
