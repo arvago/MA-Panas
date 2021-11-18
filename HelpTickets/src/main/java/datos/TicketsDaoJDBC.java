@@ -21,8 +21,6 @@ public class TicketsDaoJDBC {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
-//            stmt.setString(1, ticket.getUsername());
-//            stmt.setString(2, ticket.getPassword());
             rs = stmt.executeQuery();
             while (rs.next()) {
                 int idTicket = rs.getInt("idTicket");
@@ -31,7 +29,7 @@ public class TicketsDaoJDBC {
                 int idUserA = rs.getInt("idUserA");
                 int status = rs.getInt("status");
                 String topic = rs.getString("topic");
-                String description = rs.getString("desccription");
+                String description = rs.getString("description");
                 int priority = rs.getInt("priority");
 
                 tick = new Ticket(  idTicket,  topic,  description,  idArea,  status,  idUserU, idUserA,  priority);
