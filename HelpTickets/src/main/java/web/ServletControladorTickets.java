@@ -30,6 +30,9 @@ public class ServletControladorTickets extends HttpServlet{
                 case "editar":
 //                    this.editarCompra(request, response);
                     break;
+                case "admin":
+                    this.showOperatives(request, response);
+                    break;
                 case "eliminar":
 //                    this.eliminarCompra(request, response);
                     break;
@@ -47,7 +50,18 @@ public class ServletControladorTickets extends HttpServlet{
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Ticket> tickets = new TicketsDaoJDBC().listar();
+        List<Ticket> tickets = new TicketsDaoJDBC().listar(2);
+        System.out.println("tickets = " + tickets);
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("tickets", tickets);
+        request.getRequestDispatcher("tickets.jsp").forward(request, response);
+        response.sendRedirect("tickets.jsp");
+    }
+    
+    private void showOperatives(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        List<Ticket> tickets = new TicketsDaoJDBC().listar(1);
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);

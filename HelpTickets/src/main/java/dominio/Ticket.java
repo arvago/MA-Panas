@@ -8,6 +8,15 @@ public class Ticket {
     private int status;
     private int idUserU;
     private int idUserA;
+    private String nombreUsuario;
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
     private int priority;
     
      public Ticket(){
@@ -16,6 +25,14 @@ public class Ticket {
     
     public Ticket(int idTicket){
         this.idTicket = idTicket;
+    }
+    
+    public Ticket(int idTicket, String topic, String description, int status, String nombreUsuario){
+        this.idTicket = idTicket;
+        this.topic = topic;
+        this.description = description;
+        this.status = status;
+        this.nombreUsuario = nombreUsuario;
     }
     
     public Ticket(String topic, String description, String area, int status, int idUserU, int idUserA, int priority){
@@ -105,6 +122,6 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" + "idTicket=" + idTicket + ", topic=" + topic + ", description=" + description + ", area=" + area + ", status=" + status + ", idUserU=" + idUserU + ", idUserA=" + idUserA + ", priority=" + priority + '}';
-    }      
+        return "Ticket{" + "idTicket=" + idTicket + ", topic=" + topic + ", description=" + description + ", area=" + area + ", status=" + status + ", idUserU=" + idUserU + ", idUserA=" + idUserA + ", nombreUsuario=" + nombreUsuario + ", priority=" + priority + '}';
+    }
 }

@@ -10,9 +10,10 @@ import java.sql.*;
 import java.util.*;
 
 public class TicketsDaoJDBC {
-    private static final String SQL_SELECT = "SELECT * FROM help_tickets.ticket;";
+    private static final String SQL_SELECT_TICKETS = "SELECT t.idTicket, t.topic, t.description, t.status, CONCAT(u.name, '', u.lastname) AS nombreUsuario " +
+                                                    "FROM help_tickets.ticket t INNER JOIN help_tickets.user u ON u.idUser = t.idUserU WHERE t.idArea = ?";
     
-     public List<Ticket> listar() {
+     public List<Ticket> listar(int area) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -20,20 +21,17 @@ public class TicketsDaoJDBC {
         List<Ticket> tickets = new ArrayList<>();
         try {
             conn = Conexion.getConnection();
-            stmt = conn.prepareStatement(SQL_SELECT);
+            stmt = conn.prepareStatement(SQL_SELECT_TICKETS);
+            stmt.setInt(1, area);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 int idTicket = rs.getInt("idTicket");
-                String idArea = rs.getString("idArea");
-                int idUserU = rs.getInt("idUserU");
-                int idUserA = rs.getInt("idUserA");
-                int status = rs.getInt("status");
                 String topic = rs.getString("topic");
                 String description = rs.getString("description");
-                int priority = rs.getInt("priority");
+                int status = rs.getInt("status");
+                String nombreUsuario = rs.getString("nombreUsuario");
 
-                tick = new Ticket(  idTicket,  topic,  description,  idArea,  status,  idUserU, idUserA,  priority);
-                System.out.println(tick);
+                tick = new Ticket(idTicket, topic, description, status, nombreUsuario);
                 tickets.add(tick);
             }
         } catch (SQLException ex) {
