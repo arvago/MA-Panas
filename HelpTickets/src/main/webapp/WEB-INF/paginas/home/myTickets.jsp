@@ -18,16 +18,13 @@
                                     <li class="list-group-item">
                                         <div class="todo-indicator bg-focus"></div>
                                         <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-2">
-                                                    <div class="custom-checkbox custom-control"><input class="custom-control-input" id="exampleCustomCheckbox1" type="checkbox"><label class="custom-control-label" for="exampleCustomCheckbox1">&nbsp;</label></div>
-                                                </div>
+                                            <div class="widget-content-wrapper">                                              
                                                 <div class="widget-content-left">
                                                     <div class="widget-heading">${ticket.topic}</div>
                                                     <div class="widget-subheading">
                                                         <c:if test="${ticket.status == 0}">
                                                             <div>By ${ticket.nombreUsuario} 
-                                                                <div class="badge badge-danger badge-info ml-2">Rechazado</div>
+                                                                <div class="badge badge-pill badge-danger ml-2">Rechazado</div>
                                                             </div>
                                                         </c:if>
                                                         <c:if test="${ticket.status == 1}">
@@ -42,14 +39,19 @@
                                                         </c:if>
 
                                                     </div>
-                                                </div>
+                                                </div>                                                  
                                                 <div class="widget-content-right"> 
-                                                    <button class="border-0 btn-transition btn btn-outline-success"> 
-                                                        <i class="fa fa-arrow-up"></i>
-                                                    </button> 
-                                                    <button class="border-0 btn-transition btn btn-outline-success"> 
-                                                        <i class="fa fa-arrow-down"></i>
-                                                    </button> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
+                                                    <c:if test="${role == 'Admin'}">
+                                                        <button class="border-0 btn-transition btn btn-outline-success"> 
+                                                            <i class="fa fa-arrow-up"></i>
+                                                        </button> 
+                                                        <button class="border-0 btn-transition btn btn-outline-success"> 
+                                                            <i class="fa fa-arrow-down"></i>
+                                                        </button> 
+                                                    </c:if>
+                                                    <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> 
+                                                    <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> 
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -60,6 +62,6 @@
                 </perfect-scrollbar>
             </div>
             <button class="btn btn-primary" data-toggle="modal" data-target="#agregarTicketModal">Nuevo Ticket</button></div>
-        </div>
     </div>
+</div>
 </div>

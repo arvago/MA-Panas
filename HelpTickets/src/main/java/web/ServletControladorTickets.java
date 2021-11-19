@@ -54,6 +54,7 @@ public class ServletControladorTickets extends HttpServlet{
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
+        String role =(String)sesion.getAttribute("role");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
