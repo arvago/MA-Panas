@@ -50,7 +50,6 @@
                                                         <i class="fa fa-arrow-down"></i>
                                                     </button> <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> </div>
                                             </div>
-                                            </div>
                                         </div>
                                     </li>
                                 </c:forEach>
