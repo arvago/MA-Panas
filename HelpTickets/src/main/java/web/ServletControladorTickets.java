@@ -54,8 +54,8 @@ public class ServletControladorTickets extends HttpServlet{
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
-        request.getRequestDispatcher("tickets.jsp").forward(request, response);
-        response.sendRedirect("tickets.jsp");
+        request.getRequestDispatcher("Tickets.jsp").forward(request, response);
+        response.sendRedirect("Tickets.jsp");
     }
     
     private void showOperatives(HttpServletRequest request, HttpServletResponse response)
@@ -65,8 +65,8 @@ public class ServletControladorTickets extends HttpServlet{
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
-        request.getRequestDispatcher("tickets.jsp").forward(request, response);
-        response.sendRedirect("tickets.jsp");
+        request.getRequestDispatcher("Tickets.jsp").forward(request, response);
+        response.sendRedirect("Tickets.jsp");
     }
     
     @Override
