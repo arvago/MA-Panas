@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.*;
 
 public class TicketsDaoJDBC {
-    private static final String SQL_SELECT_TICKETS = "SELECT t.idTicket, t.topic, t.description, t.status, CONCAT(u.name, '', u.lastname) AS nombreUsuario " +
+    private static final String SQL_SELECT_TICKETS = "SELECT t.idTicket, t.topic, t.description, t.status, CONCAT(u.name, ' ', u.lastname) AS nombreUsuario " +
                                                     "FROM help_tickets.ticket t INNER JOIN help_tickets.user u ON u.idUser = t.idUserU WHERE t.idArea = ? ORDER BY t.priority ASC";
     private static final String SQL_INSERT = "INSERT INTO ticket(idArea, idUserU, status, topic, description, priority) "
             + " VALUES(?, ?, ?, ?, ?, ?)";
