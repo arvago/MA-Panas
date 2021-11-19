@@ -32,7 +32,7 @@
                                                         </c:if>
                                                         <c:if test="${ticket.status == 1}">
                                                             <div>By ${ticket.nombreUsuario} 
-                                                                <div class="badge badge-pill badge-pill ml-2">Terminado</div>
+                                                                <div class="badge badge-pill badge-success ml-2">Terminado</div>
                                                             </div>
                                                         </c:if>
                                                         <c:if test="${ticket.status == 2}">
