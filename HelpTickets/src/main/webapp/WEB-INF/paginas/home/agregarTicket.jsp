@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group">
                         <label for="area">Área al que va dirigido:</label>
-                        <select class="form-control" aria-label="Default select example" required>
+                        <select class="form-control" aria-label="Default select example" name="area" required>
                             <option value="" selected disabled>-Selecciona-</option>
                             <option value="2">Operativa</option>
                             <option value="1">Administrativa</option>

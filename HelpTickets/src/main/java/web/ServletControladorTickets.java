@@ -49,11 +49,11 @@ public class ServletControladorTickets extends HttpServlet{
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         List<Ticket> tickets = new TicketsDaoJDBC().listar(2);
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
+        sesion.setAttribute("titulo", "Operativos");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
@@ -65,6 +65,7 @@ public class ServletControladorTickets extends HttpServlet{
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
+        sesion.setAttribute("titulo", "Administrativos");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
@@ -92,7 +93,7 @@ public class ServletControladorTickets extends HttpServlet{
     private void insertarTicket(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //recuperamos los valores del formulario agregaUsuario
-         HttpSession sesion = request.getSession();
+        HttpSession sesion = request.getSession();
         String topic = request.getParameter("topic");
         System.out.println(request.getParameter("area"));
         int area = Integer.parseInt(request.getParameter("area"));
