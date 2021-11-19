@@ -18,7 +18,10 @@
                                     <li class="list-group-item">
                                         <div class="todo-indicator bg-focus"></div>
                                         <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">                                              
+                                            <div class="widget-content-wrapper">       
+                                                <div class="widget-content-left mr-2">
+                                                    
+                                                </div>
                                                 <div class="widget-content-left">
                                                     <div class="widget-heading">${ticket.topic}</div>
                                                     <div class="widget-subheading">
