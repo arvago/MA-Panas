@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/tickets")
 public class ServletControladorTickets extends HttpServlet{
-
+String role;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -54,7 +54,7 @@ public class ServletControladorTickets extends HttpServlet{
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
-        String role =(String)sesion.getAttribute("role");
+         role =(String)sesion.getAttribute("role");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
@@ -66,6 +66,7 @@ public class ServletControladorTickets extends HttpServlet{
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
+         role =(String)sesion.getAttribute("role");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
