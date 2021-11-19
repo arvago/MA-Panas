@@ -77,11 +77,6 @@ public class ServletControladorLogin extends HttpServlet{
         
         
         int registrosModificados = new UserDaoJDBC().insertar(user);
-        if(registrosModificados > 0){
-            System.out.println("Usuario Registrado");
-        } else {
-            System.out.println("Usuario No se registró");
-        }
         
         //Redirigimos hacia accion por default
         this.abrirLogin(request, response);
