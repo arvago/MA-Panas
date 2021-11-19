@@ -25,8 +25,22 @@
                                                 <div class="widget-content-left">
                                                     <div class="widget-heading">${ticket.topic}</div>
                                                     <div class="widget-subheading">
-                                                        <div>By ${ticket.nombreUsuario} <div class="badge badge-pill badge-info ml-2">NEW</div>
-                                                        </div>
+                                                        <c:if test="${ticket.status == 0}">
+                                                            <div>By ${ticket.nombreUsuario} 
+                                                                <div class="badge badge-danger badge-info ml-2">Rechazado</div>
+                                                            </div>
+                                                        </c:if>
+                                                        <c:if test="${ticket.status == 1}">
+                                                            <div>By ${ticket.nombreUsuario} 
+                                                                <div class="badge badge-pill badge-pill ml-2">Terminado</div>
+                                                            </div>
+                                                        </c:if>
+                                                        <c:if test="${ticket.status == 2}">
+                                                            <div>By ${ticket.nombreUsuario} 
+                                                                <div class="badge badge-pill badge-info ml-2">NEW</div>
+                                                            </div>
+                                                        </c:if>
+
                                                     </div>
                                                 </div>
                                                 <div class="widget-content-right"> 
