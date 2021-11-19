@@ -12,8 +12,10 @@ import java.util.*;
 public class TicketsDaoJDBC {
     private static final String SQL_SELECT_TICKETS = "SELECT t.idTicket, t.topic, t.description, t.status, CONCAT(u.name, '', u.lastname) AS nombreUsuario " +
                                                     "FROM help_tickets.ticket t INNER JOIN help_tickets.user u ON u.idUser = t.idUserU WHERE t.idArea = ?";
+    private static final String SQL_INSERT = "INSERT INTO ticket(idArea, idUserU, status, topic, description, priority) "
+            + " VALUES(?, ?, ?, ?, ?, ?)";
     
-     public List<Ticket> listar(int area) {
+    public List<Ticket> listar(int area) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -42,5 +44,29 @@ public class TicketsDaoJDBC {
             Conexion.close(conn);
         }
         return tickets;
+    }
+    
+    public int insertar(Ticket ticket) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            stmt = conn.prepareStatement(SQL_INSERT);
+            stmt.setInt(1, ticket.getArea());
+            stmt.setInt(2, ticket.getIdUserU());
+            stmt.setInt(3, ticket.getStatus());
+            stmt.setString(4, ticket.getTopic());
+            stmt.setString(5, ticket.getDescription());
+            stmt.setInt(6, ticket.getPriority());
+
+            rows = stmt.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(stmt);
+            Conexion.close(conn);
+        }
+        return rows;
     }
 }

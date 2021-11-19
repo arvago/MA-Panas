@@ -74,7 +74,10 @@ public class ServletControladorTickets extends HttpServlet{
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
         if (accion != null) {
-            switch (accion) {                
+            switch (accion) {      
+                case "insertar":
+                    this.insertarTicket(request, response);
+                    break;
                 case "editarUser":
                     this.editarUser(request, response);
                     break;
@@ -84,6 +87,25 @@ public class ServletControladorTickets extends HttpServlet{
         } else {
             this.accionDefault(request, response);
         }
+    }
+    
+    private void insertarTicket(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        //recuperamos los valores del formulario agregaUsuario
+         HttpSession sesion = request.getSession();
+        String topic = request.getParameter("topic");
+        System.out.println(request.getParameter("area"));
+        int area = Integer.parseInt(request.getParameter("area"));
+        String description = request.getParameter("description");
+        int idUsuario = (int)sesion.getAttribute("idUserLogged");
+        
+        //Creamos el objeto de usuario (modelo)
+        Ticket ticket = new Ticket(topic, description, area, 2, idUsuario, 0, 3);
+        
+        int registrosModificados = new TicketsDaoJDBC().insertar(ticket);
+        
+        //Redirigimos hacia accion por default
+        this.accionDefault(request, response);
     }
     
     private void editarUser(HttpServletRequest request, HttpServletResponse response)

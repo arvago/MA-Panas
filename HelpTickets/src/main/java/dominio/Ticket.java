@@ -4,7 +4,7 @@ public class Ticket {
     private int idTicket;
     private String topic;
     private String description;
-    private String area;
+    private int area;
     private int status;
     private int idUserU;
     private int idUserA;
@@ -35,7 +35,7 @@ public class Ticket {
         this.nombreUsuario = nombreUsuario;
     }
     
-    public Ticket(String topic, String description, String area, int status, int idUserU, int idUserA, int priority){
+    public Ticket(String topic, String description, int area, int status, int idUserU, int idUserA, int priority){
         this.topic = topic;
         this.description = description;
         this.area = area;
@@ -45,7 +45,7 @@ public class Ticket {
         this.priority = priority;
     }
     
-    public Ticket(int idTicket, String topic, String description, String area, int status, int idUserU, int idUserA, int priority){
+    public Ticket(int idTicket, String topic, String description, int area, int status, int idUserU, int idUserA, int priority){
         this.idTicket = idTicket;
         this.topic = topic;
         this.description = description;
@@ -80,11 +80,11 @@ public class Ticket {
         this.description = description;
     }
 
-    public String getArea() {
+    public int getArea() {
         return area;
     }
 
-    public void setArea(String area) {
+    public void setArea(int area) {
         this.area = area;
     }
 

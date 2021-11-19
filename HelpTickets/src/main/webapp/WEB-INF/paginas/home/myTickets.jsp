@@ -45,7 +45,7 @@
                     </div>
                 </perfect-scrollbar>
             </div>
-            <div class="d-block text-right card-footer"><button class="mr-2 btn btn-link btn-sm">Cancelar</button><button class="btn btn-primary">Nuevo Ticket</button></div>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#agregarTicketModal">Nuevo Ticket</button></div>
         </div>
     </div>
 </div>
