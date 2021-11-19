@@ -58,7 +58,7 @@ String role;
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
         sesion.setAttribute("titulo", "Administrativos");
-         role =(String)sesion.getAttribute("role");
+        role =(String)sesion.getAttribute("role");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
