@@ -22,25 +22,27 @@
                                                 <div class="widget-content-left">
                                                     <div class="widget-heading">${ticket.topic}</div>
                                                     <div class="widget-subheading">
-                                                        <c:if test="${ticket.status == 0}">
-                                                            <div>${ticket.description} 
-                                                                <div class="badge badge-danger badge-info ml-2">Rechazado</div>
-                                                            </div>
-                                                        </c:if>
-                                                        <c:if test="${ticket.status == 1}">
-                                                            <div>${ticket.description}
-                                                                <div class="badge badge-pill badge-success ml-2">Terminado</div>
-                                                            </div>
-                                                        </c:if>
-                                                        <c:if test="${ticket.status == 2}">
-                                                            <div>${ticket.description}
-                                                                <div class="badge badge-pill badge-info ml-2">New</div>
-                                                            </div>
-                                                        </c:if>
+                                                        <div>${ticket.description}
+                                                        </div>
                                                     </div>
                                                     <div class="widget-subheading">
                                                         By ${ticket.nombreUsuario}
                                                     </div>
+                                                    <c:if test="${ticket.status == 0}">
+                                                        <div class="widget-subheading">
+                                                            <div class="badge badge-info ml-2">Nuevo</div>
+                                                        </div>
+                                                    </c:if>
+                                                    <c:if test="${ticket.status == 1}">
+                                                        <div class="widget-subheading">
+                                                            <div class="badge badge-success badge-pill ml-2">Terminado</div>
+                                                        </div>
+                                                    </c:if>
+                                                    <c:if test="${ticket.status == 2}">
+                                                        <div class="widget-subheading">
+                                                            <div class="badge badge-pill badge-danger ml-2">Rechazado</div>
+                                                        </div>
+                                                    </c:if>
                                                 </div>
 
                                                 <div class="widget-content-right"> 
@@ -51,11 +53,11 @@
                                                         <button class="border-0 btn-transition btn btn-outline-success"> 
                                                             <i class="fa fa-arrow-down"></i>
                                                         </button> 
+                                                        <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i>
+                                                        </button>
+                                                        <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> 
+                                                        </button> 
                                                     </c:if>
-                                                    <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i>
-                                                    </button>
-                                                    <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> 
-                                                    </button> 
                                                 </div>
                                             </div>
                                         </div>

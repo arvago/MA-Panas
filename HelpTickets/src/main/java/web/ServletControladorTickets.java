@@ -94,7 +94,7 @@ String role;
         int idUsuario = (int)sesion.getAttribute("idUserLogged");
         
         //Creamos el objeto de usuario (modelo)
-        Ticket ticket = new Ticket(topic, description, area, 2, idUsuario, 0, 3);
+        Ticket ticket = new Ticket(topic, description, area, 0, idUsuario, 0, 3);
         
         int registrosModificados = new TicketsDaoJDBC().insertar(ticket);
         
