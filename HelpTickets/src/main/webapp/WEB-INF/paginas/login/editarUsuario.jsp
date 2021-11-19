@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="username">Contraseña:</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password" placeholder="Edita este campo en caso de querer cambiar tu contraseña">
                     </div>
                     <input type="hidden" class="form-control" name="id" value="${idUserLogged}">
                 </div>
