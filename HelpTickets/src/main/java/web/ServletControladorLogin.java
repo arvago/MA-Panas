@@ -19,15 +19,6 @@ public class ServletControladorLogin extends HttpServlet{
         String accion = request.getParameter("accion");
         if (accion != null) {
             switch (accion) {
-                case "editar":
-                   // this.editarCompra(request, response);
-                    break;
-                case "eliminar":
-                   // this.eliminarCompra(request, response);
-                    break;
-                case "obtenerPorCliente":
-                   // this.listarPorCliente(request, response);
-                    break;
                 default:
                     this.abrirLogin(request, response);
             }

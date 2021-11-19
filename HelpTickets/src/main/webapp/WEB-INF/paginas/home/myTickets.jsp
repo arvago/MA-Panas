@@ -23,34 +23,24 @@
                                                     <div class="widget-heading">${ticket.topic}</div>
                                                     <div class="widget-subheading">
                                                         <c:if test="${ticket.status == 0}">
-                                                            <div>By ${ticket.nombreUsuario} 
-                                                                <div class="badge badge-pill badge-danger ml-2">Rechazado</div>
+                                                            <div>${ticket.description} 
+                                                                <div class="badge badge-danger badge-info ml-2">Rechazado</div>
                                                             </div>
                                                         </c:if>
                                                         <c:if test="${ticket.status == 1}">
-                                                            <div>By ${ticket.nombreUsuario} 
+                                                            <div>${ticket.description}
                                                                 <div class="badge badge-pill badge-success ml-2">Terminado</div>
                                                             </div>
                                                         </c:if>
                                                         <c:if test="${ticket.status == 2}">
-                                                            <div>By ${ticket.nombreUsuario} 
-                                                                <div class="badge badge-pill badge-info ml-2">NEW</div>
+                                                            <div>${ticket.description}
+                                                                <div class="badge badge-pill badge-info ml-2">New</div>
                                                             </div>
                                                         </c:if>
-
                                                     </div>
-                                                </div>                                                  
-                                                <div class="widget-content-right"> 
-                                                    <c:if test="${role == 'Admin'}">
-                                                        <button class="border-0 btn-transition btn btn-outline-success"> 
-                                                            <i class="fa fa-arrow-up"></i>
-                                                        </button> 
-                                                        <button class="border-0 btn-transition btn btn-outline-success"> 
-                                                            <i class="fa fa-arrow-down"></i>
-                                                        </button> 
-                                                    </c:if>
-                                                    <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i></button> 
-                                                    <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> </button> 
+                                                    <div class="widget-subheading">
+                                                        By ${ticket.nombreUsuario}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

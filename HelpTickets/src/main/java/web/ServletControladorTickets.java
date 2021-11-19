@@ -27,17 +27,8 @@ public class ServletControladorTickets extends HttpServlet{
         String accion = request.getParameter("accion");
         if (accion != null) {
             switch (accion) {
-                case "editar":
-//                    this.editarCompra(request, response);
-                    break;
                 case "admin":
                     this.showOperatives(request, response);
-                    break;
-                case "eliminar":
-//                    this.eliminarCompra(request, response);
-                    break;
-                case "obtenerPorCliente":
-//                    this.listarPorCliente(request, response);
                     break;
                 default:
                     this.accionDefault(request, response);
@@ -49,12 +40,12 @@ public class ServletControladorTickets extends HttpServlet{
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         List<Ticket> tickets = new TicketsDaoJDBC().listar(2);
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
         String role =(String)sesion.getAttribute("role");
+        sesion.setAttribute("titulo", "Operativos");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
@@ -66,6 +57,7 @@ public class ServletControladorTickets extends HttpServlet{
         System.out.println("tickets = " + tickets);
         HttpSession sesion = request.getSession();
         sesion.setAttribute("tickets", tickets);
+        sesion.setAttribute("titulo", "Administrativos");
         request.getRequestDispatcher("Tickets.jsp").forward(request, response);
         response.sendRedirect("Tickets.jsp");
     }
@@ -93,7 +85,7 @@ public class ServletControladorTickets extends HttpServlet{
     private void insertarTicket(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //recuperamos los valores del formulario agregaUsuario
-         HttpSession sesion = request.getSession();
+        HttpSession sesion = request.getSession();
         String topic = request.getParameter("topic");
         System.out.println(request.getParameter("area"));
         int area = Integer.parseInt(request.getParameter("area"));

@@ -16,7 +16,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        <title>Control de Tickets</title>
+        <title>Control de Tickets ${titulo}</title>
         
         <style>
             .navbar{
@@ -215,7 +215,7 @@
         <nav class="title-page navbar-expand-lg ">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <h1>Control de Tickets</h1>
+                    <h1>Control de Tickets ${titulo}</h1>
                 </div>
             </div>
         </nav>
