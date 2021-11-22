@@ -71,14 +71,32 @@
             }
             .logo-panas{
                 width: 300px;
-                  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
 
             }
             #btn-login{
                 margin-bottom: 50px
+            }
+            .modal-header{
+                background-color: rgba(187, 134, 252, 1);
+                
+            }
+            .modal-body{
+                background-color:#15171a;
+                color: white;
+            }
+            .modal-footer{
+                background-color:#15171a;
+            }
+            .form-group{
+                margin-bottom: 30px;
+                color:white;
+            }
+            option, select, .form-group{
+                color:white;
             }
 
         </style>

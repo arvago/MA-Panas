@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -19,11 +19,9 @@
         <title>Control de Tickets ${titulo}</title>
         
         <style>
-            .navbar{
-                backgrouend-color: #00a7dc;
-            }
+            
             .title-page{
-                background-color: #0bb8e1;
+                background-color: rgba(187, 134, 252, 0.5);
                 color: white;
             }
             body {
@@ -32,10 +30,9 @@
                 font-size: 0.88rem;
                 font-weight: 400;
                 line-height: 1.5;
-                color: #495057;
                 text-align: left;
-                background-color: #eaeaea;
-                height: 100%
+                background-color: #15171a;
+                height: 58vh
             }
 
             i {
@@ -204,9 +201,46 @@
             .card-footer {
                 background-color: #fff
             }
-            .user-icon{
-                color: black !important;
+            
+            .nav-link{
+                color: #ffffff;
+                font-size: 22px;
             }
+            #logo-nav{
+                width: 50px
+            }
+            #ticketName, .card-header-title{
+                color: whitesmoke;
+            }
+            #logo-footer{
+                width: 100px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .footertxt{
+                font-size: 15px;
+                color: #F5F5F5
+            }
+            .modal-header{
+                background-color: rgba(187, 134, 252, 1);
+                
+            }
+            .modal-body{
+                background-color:#15171a;
+                color: white;
+            }
+            .modal-footer{
+                background-color:#15171a;
+            }
+            .form-group{
+                margin-bottom: 30px;
+                color:white;
+            }
+            option, select, .form-group{
+                color:white;
+            }
+            
         </style>
     </head>
     <body>

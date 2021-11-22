@@ -3,10 +3,10 @@
 <fmt:setLocale value="es_MX"/>
 
 
-<div class="row d-flex justify-content-center container ">
-    <div class="col-md-12">
-        <div class="card-hover-shadow-2x mb-3 card">
-            <div class="card-header-tab card-header">
+<div class="row d-flex justify-content-center container">
+    <div class="col-md-12 ">
+        <div class="card-hover-shadow-2x mb-3 card bg-dark">
+            <div class="card-header-tab card-header bg-dark">
                 <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i class="fa fa-tasks"></i>&nbsp;Tickets</div>
             </div>
             <div class="scroll-area-sm">
@@ -15,7 +15,7 @@
                         <div class="ps-content">
                             <ul class=" list-group list-group-flush">
                                 <c:forEach var="ticket" items="${tickets}" varStatus="status" >
-                                    <li class="list-group-item">
+                                    <li class="list-group-item bg-dark">
                                         <div class="todo-indicator bg-focus"></div>
                                         <div class="widget-content p-0">
                                             <div class="widget-content-wrapper">       
@@ -23,7 +23,7 @@
                                                     
                                                 </div>
                                                 <div class="widget-content-left">
-                                                    <div class="widget-heading">${ticket.topic}</div>
+                                                    <div class="widget-heading" id="ticketName">${ticket.topic}</div>
                                                     <div class="widget-subheading">
                                                         <div>${ticket.description}
                                                         </div>
