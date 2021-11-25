@@ -61,18 +61,26 @@
                                                     </c:if>
                                                 </div>
 
-                                                <div class="widget-content-right"> 
+                                                <div class="widget-content-right div-flex"> 
                                                     <c:if test="${role == 'Admin'}">
-                                                        <button class="border-0 btn-transition btn btn-outline-success"> 
-                                                            <i class="fa fa-arrow-up"></i>
-                                                        </button> 
-                                                        <button class="border-0 btn-transition btn btn-outline-success"> 
-                                                            <i class="fa fa-arrow-down"></i>
-                                                        </button> 
-                                                        <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i>
-                                                        </button>
-                                                        <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> 
-                                                        </button> 
+                                                        <form action="${pageContext.request.contextPath}/tickets?accion=up&id=${ticket.idTicket}" method="post">
+                                                            <button class="border-0 btn-transition btn btn-outline-success" type="submit"> 
+                                                                <i class="fa fa-arrow-up"></i>
+                                                            </button>
+                                                        </form>
+                                                        <form action="${pageContext.request.contextPath}/tickets?accion=down&id=${ticket.idTicket}" method="post">
+                                                            <button class="border-0 btn-transition btn btn-outline-success"> 
+                                                                <i class="fa fa-arrow-down"></i>
+                                                            </button> 
+                                                        </form>
+                                                        <form action="${pageContext.request.contextPath}/tickets?accion=complete&id=${ticket.idTicket}" method="post">
+                                                            <button class="border-0 btn-transition btn btn-outline-success"> <i class="fa fa-check"></i>
+                                                            </button>
+                                                        </form>
+                                                        <form action="${pageContext.request.contextPath}/tickets?accion=delete&id=${ticket.idTicket}" method="post">
+                                                            <button class="border-0 btn-transition btn btn-outline-danger"> <i class="fa fa-trash"></i> 
+                                                            </button>
+                                                        </form>
                                                     </c:if>
                                                 </div>
                                             </div>

@@ -261,6 +261,9 @@
             .margin-mini{
                 margin-right: 8px
             }
+            .div-flex{
+                display: flex
+            }
         </style>
     </head>
     <body>

@@ -29,21 +29,13 @@ String role;
             switch (accion) {
                 case "admin":
                     this.showOperatives(request, response);
-                    break;
-                case "delete":
-                    this.deleteTicket(request, response);
-                    break;
+                    break;                
                 default:
                     this.accionDefault(request, response);
             }
         } else {
             this.accionDefault(request, response);
         }
-    }
-    
-    private void deleteTicket(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
     }
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
@@ -85,12 +77,15 @@ String role;
                     break;
                 case "up":
                     this.upPriority(request, response);
-                    break;
+                break;
                 case "down":
-                    //this.downPriority(request, response);
+                    this.downPriority(request, response);
                     break;
                 case "complete":
-                    //this.completeTicket(request, response);
+                    this.completeTicket(request, response);
+                break;
+                case "delete":
+                    this.deleteTicket(request, response);
                 break;
                 default:
                     this.accionDefault(request, response);
@@ -146,17 +141,91 @@ String role;
     
     private void upPriority(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int idUser = Integer.parseInt(request.getParameter("id"));
-        System.out.println(idUser);
+        int idTicket = Integer.parseInt(request.getParameter("id"));
+        int prioridad = new TicketsDaoJDBC().getPriority(idTicket);
+        int newPrioridad = 0;
+        switch(prioridad){
+            case 1:
+                newPrioridad = 1;
+                break;
+            case 2: 
+                newPrioridad = 1;
+                break;
+            case 3:
+                newPrioridad = 2;
+                break;
+        }
+        int registrosModificados = new TicketsDaoJDBC().updatePriority(idTicket, newPrioridad);
+        HttpSession sesion = request.getSession();
+        String tituloActual = sesion.getAttribute("titulo").toString();
+        switch(tituloActual){
+            case "Operativos":
+                this.accionDefault(request, response);
+                break;
+            case "Administrativos":
+                this.showOperatives(request, response);
+                break;
+        }
     }
     
     private void downPriority(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        int idTicket = Integer.parseInt(request.getParameter("id"));
+        int prioridad = new TicketsDaoJDBC().getPriority(idTicket);
+        int newPrioridad = 0;
+        switch(prioridad){
+            case 1:
+                newPrioridad = 2;
+                break;
+            case 2: 
+                newPrioridad = 3;
+                break;
+            case 3:
+                newPrioridad = 3;
+                break;
+        }
+        int registrosModificados = new TicketsDaoJDBC().updatePriority(idTicket, newPrioridad);
+        HttpSession sesion = request.getSession();
+        String tituloActual = sesion.getAttribute("titulo").toString();
+        switch(tituloActual){
+            case "Operativos":
+                this.accionDefault(request, response);
+                break;
+            case "Administrativos":
+                this.showOperatives(request, response);
+                break;
+        }
     }
     
     private void completeTicket(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        int idTicket = Integer.parseInt(request.getParameter("id"));
+        int registrosModificados = new TicketsDaoJDBC().updateStatus(idTicket, 1);
+        HttpSession sesion = request.getSession();
+        String tituloActual = sesion.getAttribute("titulo").toString();
+        switch(tituloActual){
+            case "Operativos":
+                this.accionDefault(request, response);
+                break;
+            case "Administrativos":
+                this.showOperatives(request, response);
+                break;
+        }
+    }
+    
+    private void deleteTicket(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int idTicket = Integer.parseInt(request.getParameter("id"));
+        int registrosModificados = new TicketsDaoJDBC().updateStatus(idTicket, 2);
+        HttpSession sesion = request.getSession();
+        String tituloActual = sesion.getAttribute("titulo").toString();
+        switch(tituloActual){
+            case "Operativos":
+                this.accionDefault(request, response);
+                break;
+            case "Administrativos":
+                this.showOperatives(request, response);
+                break;
+        }
     }
 }
