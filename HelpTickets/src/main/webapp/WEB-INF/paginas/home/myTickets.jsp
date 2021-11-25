@@ -18,10 +18,22 @@
                                     <li class="list-group-item bg-dark">
                                         <div class="todo-indicator bg-focus"></div>
                                         <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">       
-                                                <div class="widget-content-left mr-2">
-                                                    
-                                                </div>
+                                            <div class="widget-content-wrapper">  
+                                                <c:if test="${ticket.prioridad == 'ALTA'}">
+                                                    <div class="widget-content-left margin-mini">
+                                                        <input class="form-check-input rd-red" type="radio" disabled>                                                    
+                                                    </div>  
+                                                </c:if>     
+                                                <c:if test="${ticket.prioridad == 'BAJA'}">
+                                                    <div class="widget-content-left margin-mini">
+                                                        <input class="form-check-input rd-green" type="radio" disabled>                                                    
+                                                    </div>  
+                                                </c:if>   
+                                                <c:if test="${ticket.prioridad == 'MEDIA'}">
+                                                    <div class="widget-content-left margin-mini">
+                                                        <input class="form-check-input rd-yellow" type="radio" disabled>                                                    
+                                                    </div>  
+                                                </c:if>   
                                                 <div class="widget-content-left">
                                                     <div class="widget-heading" id="ticketName">${ticket.topic}</div>
                                                     <div class="widget-subheading">
@@ -31,19 +43,20 @@
                                                     <div class="widget-subheading">
                                                         By ${ticket.nombreUsuario}
                                                     </div>
+                                                    <input type="hidden" value="${ticket.idTicket}" name="id${ticket.idTicket}">
                                                     <c:if test="${ticket.status == 0}">
                                                         <div class="widget-subheading">
-                                                            <div class="badge badge-info ml-2">Nuevo</div>
+                                                            <div class="badge fnt-blue ml-2">Nuevo</div>
                                                         </div>
                                                     </c:if>
                                                     <c:if test="${ticket.status == 1}">
                                                         <div class="widget-subheading">
-                                                            <div class="badge badge-success badge-pill ml-2">Terminado</div>
+                                                            <div class="badge fnt-green ml-2">Terminado</div>
                                                         </div>
                                                     </c:if>
                                                     <c:if test="${ticket.status == 2}">
                                                         <div class="widget-subheading">
-                                                            <div class="badge badge-pill badge-danger ml-2">Rechazado</div>
+                                                            <div class="badge fnt-red ml-2">Rechazado</div>
                                                         </div>
                                                     </c:if>
                                                 </div>

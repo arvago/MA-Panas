@@ -30,12 +30,20 @@ String role;
                 case "admin":
                     this.showOperatives(request, response);
                     break;
+                case "delete":
+                    this.deleteTicket(request, response);
+                    break;
                 default:
                     this.accionDefault(request, response);
             }
         } else {
             this.accionDefault(request, response);
         }
+    }
+    
+    private void deleteTicket(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
     }
 
     private void accionDefault(HttpServletRequest request, HttpServletResponse response)
@@ -75,6 +83,15 @@ String role;
                 case "editarUser":
                     this.editarUser(request, response);
                     break;
+                case "up":
+                    this.upPriority(request, response);
+                    break;
+                case "down":
+                    //this.downPriority(request, response);
+                    break;
+                case "complete":
+                    //this.completeTicket(request, response);
+                break;
                 default:
                     this.accionDefault(request, response);
             }
@@ -125,5 +142,21 @@ String role;
         sesion.setAttribute("username", username);
         request.getRequestDispatcher("index2.jsp").forward(request, response);
         response.sendRedirect("index2.jsp");
+    }
+    
+    private void upPriority(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int idUser = Integer.parseInt(request.getParameter("id"));
+        System.out.println(idUser);
+    }
+    
+    private void downPriority(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+    }
+    
+    private void completeTicket(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
     }
 }

@@ -240,7 +240,27 @@
             option, select, .form-group{
                 color:white;
             }
-            
+            .fnt-blue{
+                color: #0099ff !important
+            }
+            .fnt-green{
+                color:#00cc66 !important
+            }
+            .fnt-red{
+                color:#cc0000 !important
+            }
+            .rd-red{
+                background-color: #cc0000 !important
+            }
+            .rd-yellow{
+                background-color:#ffcc00 !important
+            }
+            .rd-green{
+                background-color: #00cc66 !important
+            }
+            .margin-mini{
+                margin-right: 8px
+            }
         </style>
     </head>
     <body>

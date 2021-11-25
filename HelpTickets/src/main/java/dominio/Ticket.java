@@ -9,6 +9,8 @@ public class Ticket {
     private int idUserU;
     private int idUserA;
     private String nombreUsuario;
+    private int priority;
+    private String prioridad;
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -16,8 +18,7 @@ public class Ticket {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
-    }
-    private int priority;
+    }    
     
      public Ticket(){
         
@@ -27,14 +28,23 @@ public class Ticket {
         this.idTicket = idTicket;
     }
     
-    public Ticket(int idTicket, String topic, String description, int status, String nombreUsuario){
+    public Ticket(int idTicket, String topic, String description, int status, String nombreUsuario, String prioridad){
         this.idTicket = idTicket;
         this.topic = topic;
         this.description = description;
         this.status = status;
         this.nombreUsuario = nombreUsuario;
+        this.prioridad = prioridad;
     }
-    
+
+    public String getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
+
     public Ticket(String topic, String description, int area, int status, int idUserU, int idUserA, int priority){
         this.topic = topic;
         this.description = description;

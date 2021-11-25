@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.*;
 
 public class TicketsDaoJDBC {
-    private static final String SQL_SELECT_TICKETS = "SELECT t.idTicket, t.topic, t.description, t.status, CONCAT(u.name, ' ', u.lastname) AS nombreUsuario " +
+    private static final String SQL_SELECT_TICKETS = "SELECT t.idTicket, t.topic, t.description, t.status, CONCAT(u.name, ' ', u.lastname) AS nombreUsuario, IF(t.priority = 1, 'ALTA', IF(t.priority = 2, 'MEDIA', 'BAJA')) AS prioridad " +
                                                     "FROM help_tickets.ticket t INNER JOIN help_tickets.user u ON u.idUser = t.idUserU WHERE t.idArea = ? ORDER BY t.priority ASC";
     private static final String SQL_INSERT = "INSERT INTO ticket(idArea, idUserU, status, topic, description, priority) "
             + " VALUES(?, ?, ?, ?, ?, ?)";
@@ -32,8 +32,9 @@ public class TicketsDaoJDBC {
                 String description = rs.getString("description");
                 int status = rs.getInt("status");
                 String nombreUsuario = rs.getString("nombreUsuario");
+                String prioridad = rs.getString("prioridad");
 
-                tick = new Ticket(idTicket, topic, description, status, nombreUsuario);
+                tick = new Ticket(idTicket, topic, description, status, nombreUsuario, prioridad);
                 tickets.add(tick);
             }
         } catch (SQLException ex) {
@@ -43,6 +44,7 @@ public class TicketsDaoJDBC {
             Conexion.close(stmt);
             Conexion.close(conn);
         }
+        System.out.println(tickets);
         return tickets;
     }
     
